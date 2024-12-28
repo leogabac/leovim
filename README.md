@@ -13,11 +13,11 @@ If you came across this, chances are you know me in person and wanted to try my 
 
 Clone the repo
 ```bash
-    git clone https://github.com/leogabac/leovim.git ~/.config/nvim
+git clone https://github.com/leogabac/leovim.git ~/.config/nvim
 ```
 and launch
 ```bash
-    nvim
+nvim
 ```
 
 ### Multiple configurations
@@ -25,11 +25,11 @@ and launch
 Neovim lets you lauch it with a different configuration file by using the [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME) environmental variable when launching it with the command.
 
 ```bash
-    NVIM_APPNAME="leovim" nvim
+NVIM_APPNAME="leovim" nvim
 ```
 This will look for a configuration file under `~/.config/leovim` . Using this, you can clone
 ```bash
-    git clone https://github.com/leogabac/leovim.git ~/.config/leovim
+git clone https://github.com/leogabac/leovim.git ~/.config/leovim
 ```
 and make the alias 
 ```bash
