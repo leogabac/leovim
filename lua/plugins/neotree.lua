@@ -76,7 +76,7 @@ return {
 					reveal = buffer_dir,
 				})
 			end,
-			desc = "Explorer NeoTree (Reset on Toggle)",
+			desc = "Explorer NeoTree (Reveal buffer)",
 		},
 	},
 	branch = "v3.x",
