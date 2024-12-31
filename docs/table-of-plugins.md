@@ -62,7 +62,7 @@ Autocompletion and Snippets
 | self     | vimtex            | nvim-latex communication     | START       |
 | self     | nvim-cmp          | autocompletion               | InsertEnter |
 | nvim-cmp | cmp-path          | source for filesystem        | Parent      |
-| nvim-cmp | cmp-vimtex        | source for vimtex            | tex         |
+| nvim-cmp | cmp-vimtex        | source for vimtex            | tex files   |
 | nvim-cmp | cmp_luasnip       | source for LuaSnip           | Parent      |
 | nvim-cmp | friendly-snippets | common library of snippets   | Parent      |
 | nvim-cmp | LuaSnip           | snippet engine               | Parent      |

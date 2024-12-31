@@ -10,7 +10,6 @@ If you came across this, chances are you know me in person and wanted to try my 
 
 ## Quick Start
 
-Note: To see how to install multiple configuration files, see the [FAQ](./docs/faq.md) section
 
 ### Installation
 
@@ -23,5 +22,8 @@ and launch
 nvim
 ```
 
+### Documentation
 
+To see what all of the plugins leovim has, and how to work with some of them, you can go to the [Documentation](./docs/index.md).
 
+Note: To see how to install multiple configuration files, see the [FAQ](./docs/faq.md) section
