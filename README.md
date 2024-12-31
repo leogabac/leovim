@@ -6,10 +6,11 @@ If you came across this, chances are you know me in person and wanted to try my 
 ## Features
 
 * Simplicity
-* Full LaTeX support
-* Full Markdown support (WIP to be an Obsidian replacement)
+* Preconfigured LaTeX support
 
-## Installation
+## Quick Start
+
+### Installation
 
 Clone the repo
 ```bash
@@ -20,21 +21,6 @@ and launch
 nvim
 ```
 
-### Multiple configurations
-
-Neovim lets you lauch it with a different configuration file by using the [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME) environmental variable when launching it with the command.
-
-```bash
-NVIM_APPNAME="leovim" nvim
-```
-This will look for a configuration file under `~/.config/leovim` . Using this, you can clone
-```bash
-git clone https://github.com/leogabac/leovim.git ~/.config/leovim
-```
-and make the alias 
-```bash
-alias leovim='NVIM_APPNAME="leovim" nvim'
-```
-Then `leovim` will launch this confguration while `nvim` will keep your default.
+To see how to install multiple configuration files, see the [FAQ](./docs/faq.md) section
 
 
