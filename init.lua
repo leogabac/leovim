@@ -2,6 +2,7 @@
 require("core.options") -- ./core/options.lua
 require("core.keymaps") -- ./core/keypams.lua
 require("core.autocmds") -- ./core/autocmds.lua
+require("custom.example")
 
 -- install lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
