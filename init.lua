@@ -15,7 +15,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local plugins = {
 	-- plugins for aesthetics
 	require("plugins.alpha"),
 	require("plugins.colorscheme"),
@@ -36,4 +36,10 @@ require("lazy").setup({
 
 	require("plugins.misc"),
 	-- require("plugins.markdown-setup"),
-})
+}
+
+if vim.env.MARKDOWN then
+	table.insert(plugins, require("plugins.markdown-setup"))
+end
+
+require("lazy").setup(plugins)
