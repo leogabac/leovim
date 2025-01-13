@@ -75,3 +75,11 @@ vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR><Esc>", { noremap = true, silent 
 -- vim.keymap.set("x", "p", '"_dP')
 -- vim.keymap.set("x", "<leader>p", "P")
 vim.keymap.set({ "n", "x" }, "<leader>p", [["0p]], { desc = "paste from yank register" })
+
+-- some useful keymaps for compiled languages
+vim.keymap.set("n", "<leader>;", "A;<Esc>", opts)
+vim.keymap.set("n", ";;", "A;<Esc>", opts)
+-- compile and run
+vim.keymap.set("n", "<Leader>cr", ":w<CR>:!gcc % -o %:r && ./%:r<CR>", opts)
+-- just compile
+vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", opts)
