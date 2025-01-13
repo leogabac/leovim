@@ -32,6 +32,7 @@ local plugins = {
 	require("plugins.autoformatting"),
 	require("plugins.indent-blankline"),
 	require("plugins.flash"),
+	require("plugins.code-runner"),
 	-- require("plugins.gitsigns"),
 
 	require("plugins.misc"),
