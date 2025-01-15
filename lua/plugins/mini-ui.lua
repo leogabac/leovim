@@ -1,4 +1,25 @@
 return {
+  -- greeter
+  {
+    "echasnovski/mini.starter",
+    version = false,
+    config = function()
+      local api = require("mini.starter")
+      api.setup({
+        header = table.concat({
+          [[██╗     ███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
+          [[██║     ██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
+          [[██║     █████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
+          [[██║     ██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║]],
+          [[███████╗███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║]],
+          [[╚══════╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+        }, "\n"),
+        items = {
+          api.sections.builtin_actions(),
+        },
+      })
+    end,
+  },
   -- top buffers in a tabline
   {
     "echasnovski/mini.tabline",
@@ -94,7 +115,7 @@ return {
               { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
               -- { hl = mode_hl, strings = { location } },
               { hl = "MiniStatuslineLocation", strings = { location } },
-              { hl = mode_hl, strings = { vim.fn.strftime('%H:%M') } },
+              { hl = mode_hl, strings = { vim.fn.strftime("%H:%M") } },
             })
           end,
           inactive = nil, -- Use default for inactive
