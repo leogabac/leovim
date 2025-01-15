@@ -23,9 +23,10 @@ local plugins = {
   require("plugins.noice-classic"),
 
   -- general programming utilities
-  -- require("plugins.treesitter"),
-  require("plugins.neotree"),
+  -- require("plugins.neotree"),
+  require("plugins.nvim-tree"),
   require("plugins.telescope"),
+  -- require("plugins.treesitter"),
 
   require("plugins.lsp"),
   require("plugins.autocompletion"),
@@ -33,9 +34,7 @@ local plugins = {
   require("plugins.indent-blankline"),
 
   -- require("plugins.code-runner"),
-
   require("plugins.misc"),
-  -- require("plugins.markdown-setup"),
 }
 
 if vim.env.MARKDOWN then

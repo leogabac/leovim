@@ -52,6 +52,7 @@ return {
       vim.keymap.set("n", "<leader>lc", ":VimtexCompile<CR>", { desc = "vimtex-clean-aux" })
     end,
   },
+  -- search functionality
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -65,5 +66,15 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
+  },
+  -- move text in any direction
+  {
+    "echasnovski/mini.move",
+    version = false,
+    config = function ()
+      local minimove = require("mini.move")
+      minimove.setup()
+    end
+
   },
 }
