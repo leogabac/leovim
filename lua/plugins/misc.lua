@@ -16,13 +16,13 @@ return {
     -- Hints keybinds
     "folke/which-key.nvim",
   },
-  {
-    -- Autoclose parentheses, brackets, quotes, etc.
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-    opts = {},
-  },
+  -- {
+  --   -- Autoclose parentheses, brackets, quotes, etc.
+  --   "windwp/nvim-autopairs",
+  --   event = "InsertEnter",
+  --   config = true,
+  --   opts = {},
+  -- },
   -- {
   -- 	-- Highlight todo, notes, etc in comments
   -- 	"folke/todo-comments.nvim",
@@ -66,15 +66,5 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
-  },
-  -- move text in any direction
-  {
-    "echasnovski/mini.move",
-    version = false,
-    config = function ()
-      local minimove = require("mini.move")
-      minimove.setup()
-    end
-
   },
 }

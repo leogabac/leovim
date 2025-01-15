@@ -26,6 +26,7 @@ local plugins = {
   -- require("plugins.neotree"),
   require("plugins.nvim-tree"),
   require("plugins.telescope"),
+  require("plugins.mini-nvim"),
   -- require("plugins.treesitter"),
 
   require("plugins.lsp"),
