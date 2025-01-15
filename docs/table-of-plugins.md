@@ -1,8 +1,14 @@
 # Table Of Plugins
 
+> [!WARNING]
+> This is heavily outdated.
+> Last updated in Dec 2024
+
 Here you will find a table of plugins that leovim installs, their parents, purpose in the installation, and conditions for loading.
 
 I categorize them in sections.
+
+
 
 ## Management
 
