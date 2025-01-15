@@ -20,7 +20,7 @@ local plugins = {
   require("plugins.alpha"),
   require("plugins.colorscheme"),
   require("plugins.mini-ui"),
-  require("plugins.noice"),
+  require("plugins.noice-classic"),
 
   -- general programming utilities
   -- require("plugins.treesitter"),
@@ -44,3 +44,4 @@ if vim.env.MARKDOWN then
 end
 
 require("lazy").setup(plugins)
+

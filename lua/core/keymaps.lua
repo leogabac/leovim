@@ -83,3 +83,4 @@ vim.keymap.set("n", ";;", "A;<Esc>", opts)
 vim.keymap.set("n", "<Leader>cr", ":w<CR>:!gcc % -o %:r && ./%:r<CR>", opts)
 -- just compile
 vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", opts)
+
