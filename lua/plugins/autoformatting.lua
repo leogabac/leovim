@@ -17,11 +17,9 @@ return {
 		-- Disable format on save globally
 		format_on_save = false,
 		formatters_by_ft = {
-			lua = { "stylua" },
-			markdown = {"prettier"}
-			-- Add additional file type configurations if needed
-			-- python = { "isort", "black" },
-			-- javascript = { "prettierd", "prettier", stop_after_first = true },
+			lua = { "stylua" },  -- Use stylua without args
+			markdown = { "prettier" },
 		},
 	},
 }
+

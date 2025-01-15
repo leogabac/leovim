@@ -12,10 +12,6 @@ return {
 		-- Powerful Git integration for Vim
 		"tpope/vim-fugitive",
 	},
-	-- {
-	-- 	-- GitHub integration for vim-fugitive
-	-- 	"tpope/vim-rhubarb",
-	-- },
 	{
 		-- Hints keybinds
 		"folke/which-key.nvim",
@@ -57,13 +53,4 @@ return {
 		end,
 
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	-- 	build = "cd app && yarn install",
-	-- 	init = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- },
 }
