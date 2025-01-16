@@ -1,5 +1,5 @@
+-- Autoformatter setup
 return {
-	-- Autoformat
 	"stevearc/conform.nvim",
 	cmd = { "ConformInfo" },
 	keys = {

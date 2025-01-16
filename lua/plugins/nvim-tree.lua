@@ -5,7 +5,9 @@ return {
     api.setup({
       disable_netrw = true,
       hijack_netrw = true,
-
+      git = {
+        ignore = false, -- Disable gitignore filtering
+      },
       -- Renderer settings (for customizing how the tree looks)
       renderer = {
         icons = {

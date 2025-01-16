@@ -84,3 +84,6 @@ vim.keymap.set("n", "<Leader>cr", ":w<CR>:!gcc % -o %:r && ./%:r<CR>", opts)
 -- just compile
 vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", opts)
 
+
+vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
+vim.keymap.set('n', '<leader>ly', '"+yy', { desc = 'Yank current line to system clipboard' })

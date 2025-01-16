@@ -25,7 +25,6 @@ local plugins = {
 
   -- file exploration
   require("plugins.nvim-tree"),
-  -- require("plugins.neotree"),
   require("plugins.telescope"),
 
   -- general programming utilities

@@ -1,4 +1,4 @@
--- Standalone plugins with less than 10 lines of config go here
+--tandalone plugins with less than 10 lines of config go here
 return {
   {
     -- Tmux & split window navigation
@@ -12,24 +12,6 @@ return {
     -- Powerful Git integration for Vim
     "tpope/vim-fugitive",
   },
-  -- {
-  --   -- Hints keybinds
-  --   "folke/which-key.nvim",
-  -- },
-  -- {
-  --   -- Autoclose parentheses, brackets, quotes, etc.
-  --   "windwp/nvim-autopairs",
-  --   event = "InsertEnter",
-  --   config = true,
-  --   opts = {},
-  -- },
-  -- {
-  -- 	-- Highlight todo, notes, etc in comments
-  -- 	"folke/todo-comments.nvim",
-  -- 	event = "VimEnter",
-  -- 	dependencies = { "nvim-lua/plenary.nvim" },
-  -- 	opts = { signs = false },
-  -- },
   {
     -- High-performance color highlighter
     "norcalli/nvim-colorizer.lua",
