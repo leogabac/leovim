@@ -15,7 +15,7 @@ This template comes preconfigured with many of the tools I use daily, those incl
 
 Here is a quick table on where to go when you are lost, and hopefully all your questions will be answered.
 
-* [Table of Plugins](./latex.md) 
+* [Table of Plugins](./table-of-plugins.md) 
 * [Keymaps](./keymaps.md) 
 * [LaTeX Setup](./latex.md) 
 * [Frequently Asked Questions](./faq.md) 

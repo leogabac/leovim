@@ -87,3 +87,13 @@ vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", opts)
 
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
 vim.keymap.set('n', '<leader>ly', '"+yy', { desc = 'Yank current line to system clipboard' })
+vim.keymap.set("n", "<leader>mp", function()
+  local filename = vim.fn.expand("%:t") -- Get current buffer name
+  if filename == "" then
+    print("No file name detected")
+    return
+  end
+  local name = vim.fn.fnamemodify(filename, ":r") -- Remove extension
+  local cmd = string.format("~/.scripts/md2pdf/md2pdf.sh %s.md %s.pdf", name, name)
+  vim.cmd("!" .. cmd)
+end, { desc = "Convert Markdown to PDF" })

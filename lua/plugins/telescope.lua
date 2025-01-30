@@ -61,6 +61,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         find_files = {
           file_ignore_patterns = { "node_modules", ".git", ".venv" },
           hidden = true,
+          no_ignore = true, -- show untracked/ignored files in git repo
         },
       },
       live_grep = {
