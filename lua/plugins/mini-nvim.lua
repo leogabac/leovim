@@ -1,12 +1,4 @@
 return {
-  -- move text in any direction
-  {
-    "echasnovski/mini.move",
-    version = false,
-    config = function()
-      require("mini.move").setup()
-    end,
-  },
   -- open and close parenthesis
   {
     "echasnovski/mini.pairs",
