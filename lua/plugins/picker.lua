@@ -3,10 +3,10 @@ return {
     "echasnovski/mini.pick",
     version = false,
     config = function()
-      local picker = require("mini.pick")
+      local MiniPick = require("mini.pick")
 
-      vim.ui.select = picker.ui_select
-      picker.setup({
+      vim.ui.select = MiniPick.ui_select
+      MiniPick.setup({
         mappings = {
           caret_left = "<Left>",
           caret_right = "<Right>",
