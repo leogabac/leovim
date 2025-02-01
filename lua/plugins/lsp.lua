@@ -58,29 +58,22 @@ return {
         end
 
         -- Jump to the definition of the word under your cursor.
-        vim.keymap.set("n", "gd", ":Pick lsp scope=\"definition\"<CR>",
-        { desc = "[G]o to [D]efinition", noremap = true, silent = true }
-        )
+        vim.keymap.set("n", "gd", ":Pick lsp scope=\"definition\"<CR>", { desc = "[G]oto [D]efinition", noremap = true, silent = true })
 
-        -- -- Find references for the word under your cursor.
-        -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-        --
-        -- -- Jump to the implementation of the word under your cursor.
-        -- --  Useful when your language has ways of declaring types without an actual implementation.
-        -- map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-        --
-        -- -- Jump to the type of the word under your cursor.
-        -- --  Useful when you're not sure what type a variable is and you want to see
-        -- --  the definition of its *type*, not where it was *defined*.
-        -- map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-        --
-        -- -- Fuzzy find all the symbols in your current document.
-        -- --  Symbols are things like variables, functions, types, etc.
-        -- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-        --
-        -- -- Fuzzy find all the symbols in your current workspace.
-        -- --  Similar to document symbols, except searches over your entire project.
-        -- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+        -- Find references for the word under your cursor.
+        vim.keymap.set("n", "gr", ":Pick lsp scope=\"references\"<CR>", { desc = "[G]oto [R]eferences", noremap = true, silent = true })
+
+        -- Jump to the implementation of the word under your cursor.
+        vim.keymap.set("n", "gI", ":Pick lsp scope=\"implementation\"<CR>", { desc = "[G]oto [I]mplementation", noremap = true, silent = true })
+
+        -- Jump to the type of the word under your cursor.
+        vim.keymap.set("n", "<leader>D", ":Pick lsp scope=\"type_definition\"<CR>", { desc = "Type [D]efinition", noremap = true, silent = true })
+
+        -- Fuzzy find all the symbols in your current document.
+        vim.keymap.set("n", "ds", ":Pick lsp scope=\"document_symbol\"<CR>", { desc = "[D]ocument [S]ymbols", noremap = true, silent = true })
+
+        -- Fuzzy find all the symbols in your current workspace.
+        vim.keymap.set("n", "ws", ":Pick lsp scope=\"workspace_symbol\"<CR>", { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true })
         --
 
 
