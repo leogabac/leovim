@@ -25,10 +25,10 @@ local plugins = {
 
   -- file exploration
   require("plugins.nvim-tree"),
-  require("plugins.telescope"),
+  -- require("plugins.telescope"),
 
   -- general programming utilities
-  require("plugins.lsp"),
+  -- require("plugins.lsp"),
   require("plugins.autocompletion"),
   require("plugins.autoformatting"),
   require("plugins.mini-nvim"),
