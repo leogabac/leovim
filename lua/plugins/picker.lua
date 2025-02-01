@@ -72,6 +72,17 @@ return {
 
       -- Keymaps for files
       vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "[S]earch [F]iles", noremap = true, silent = true }) -- focus file explorer
+
+      vim.keymap.set("n", "<leader>sa", function()
+        local handle = io.popen("fd --type f -H -I") -- List all files, including hidden and ignored ones
+        if handle then
+          local result = handle:read("*a")
+          handle:close()
+          local items = vim.split(result, "\n", { trimempty = true })
+          MiniPick.start({ source = { items = items } })
+        end
+      end, { desc = "[S]earch [A]ll files (including ignored)", noremap = true, silent = true })
+
     end,
   },
 }
