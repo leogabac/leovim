@@ -28,8 +28,8 @@ return {
         vim.keymap.set("n", "gr", ":Pick lsp scope=\"references\"<CR>", { desc = "[G]oto [R]eferences", noremap = true, silent = true })
         vim.keymap.set("n", "gI", ":Pick lsp scope=\"implementation\"<CR>", { desc = "[G]oto [I]mplementation", noremap = true, silent = true })
         vim.keymap.set("n", "<leader>D", ":Pick lsp scope=\"type_definition\"<CR>", { desc = "Type [D]efinition", noremap = true, silent = true })
-        vim.keymap.set("n", "ds", ":Pick lsp scope=\"document_symbol\"<CR>", { desc = "[D]ocument [S]ymbols", noremap = true, silent = true })
-        vim.keymap.set("n", "ws", ":Pick lsp scope=\"workspace_symbol\"<CR>", { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>ds", ":Pick lsp scope=\"document_symbol\"<CR>", { desc = "[D]ocument [S]ymbols", noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>ws", ":Pick lsp scope=\"workspace_symbol\"<CR>", { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true })
 
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
