@@ -1,6 +1,9 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
   {
+     "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font
+  },
+  {
     -- Tmux & split window navigation
     "christoomey/vim-tmux-navigator",
   },
