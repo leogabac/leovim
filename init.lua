@@ -27,6 +27,7 @@ local plugins = {
   require("plugins.nvim-tree"),
   require("plugins.picker"),
 
+
   -- general programming utilities
   -- require("plugins.lsp"),
   require("plugins.autocompletion"),

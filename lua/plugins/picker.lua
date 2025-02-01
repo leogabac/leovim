@@ -4,6 +4,8 @@ return {
     version = false,
     config = function()
       local minipick = require("mini.pick")
+
+      vim.ui.select = minipick.ui_select
       minipick.setup({
         mappings = {
           caret_left = "<Left>",
@@ -51,17 +53,31 @@ return {
         },
         window = {
           config = function()
-            local width = math.floor(vim.o.columns * 0.6) -- 60% of screen width
-            local height = math.floor(vim.o.lines * 0.6) -- 60% of screen height
-            local row = math.floor((vim.o.lines - height) / 2) -- Center vertically
-            local col = math.floor((vim.o.columns - width) / 2) -- Center horizontally
+            local height, width, starts, ends
+            local win_width = vim.o.columns
+            local win_height = vim.o.lines
+
+            if win_height <= 25 then
+              height = math.min(win_height, 18)
+              width = win_width
+              starts = 1
+              ends = win_height
+            else
+              width = math.floor(win_width * 0.5) -- 50%
+              height = math.floor(win_height * 0.3) -- 30%
+              starts = math.floor((win_width - width) / 2)
+              -- center prompt: height * (50% + 30%)
+              -- center window: height * [50% + (30% / 2)]
+              ends = math.floor(win_height * 0.65)
+            end
+
             return {
-              relative = "editor",
-              width = width,
+              col = starts,
+              row = ends,
               height = height,
-              row = row,
-              col = col,
-              border = "rounded", -- You can change this to 'single', 'double', etc.
+              width = width,
+              style = "minimal",
+              -- border = { " ", " ", " ", " ", " ", " ", " ", " " },
             }
           end,
 
