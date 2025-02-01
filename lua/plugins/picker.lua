@@ -72,12 +72,6 @@ return {
 
       -- Keymaps for files
       vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "[S]earch [F]iles", noremap = true, silent = true }) -- focus file explorer
-      vim.keymap.set(
-        "n",
-        "<leader>sF",
-        pickers.all_files,
-        { desc = "[S]earch [A]ll Files", noremap = true, silent = true }
-      )
     end,
   },
 }
