@@ -1,4 +1,12 @@
 return {
+  {
+    "echasnovski/mini.extra",
+    version = false,
+    config = function ()
+      local api = require("mini.extra")
+      api.setup()
+    end,
+  },
   -- open and close parenthesis
   {
     "echasnovski/mini.pairs",

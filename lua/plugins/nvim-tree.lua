@@ -1,5 +1,10 @@
 return {
   "kyazdani42/nvim-tree.lua",
+  dependencies = {
+    {
+     "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font
+    },
+  },
   config = function()
     local api = require("nvim-tree")
     api.setup({

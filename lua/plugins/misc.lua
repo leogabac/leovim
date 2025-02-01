@@ -1,6 +1,6 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
-  {
+    {
     -- Tmux & split window navigation
     "christoomey/vim-tmux-navigator",
   },
