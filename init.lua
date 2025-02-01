@@ -29,7 +29,7 @@ local plugins = {
 
 
   -- general programming utilities
-  -- require("plugins.lsp"),
+  require("plugins.lsp"),
   require("plugins.autocompletion"),
   require("plugins.autoformatting"),
   require("plugins.mini-nvim"),

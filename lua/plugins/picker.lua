@@ -52,6 +52,7 @@ return {
           use_cache = false,
         },
         window = {
+          -- make a floating centered window
           config = function()
             local height, width, starts, ends
             local win_width = vim.o.columns
@@ -63,11 +64,9 @@ return {
               starts = 1
               ends = win_height
             else
-              width = math.floor(win_width * 0.5) -- 50%
-              height = math.floor(win_height * 0.3) -- 30%
+              width = math.floor(win_width * 0.7) -- 70%
+              height = math.floor(win_height * 0.7) -- 70%
               starts = math.floor((win_width - width) / 2)
-              -- center prompt: height * (50% + 30%)
-              -- center window: height * [50% + (30% / 2)]
               ends = math.floor(win_height * 0.65)
             end
 
@@ -81,12 +80,12 @@ return {
             }
           end,
 
-          backdrop = 100,
           prompt_cursor = "▏",
-          prompt_prefix = "> ",
+          prompt_prefix = " ",
         },
       })
 
+      -- Keymaps for files
       vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "[S]earch [F]iles", noremap = true, silent = true }) -- focus file explorer
     end,
   },
