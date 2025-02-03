@@ -29,10 +29,10 @@ vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 
 -- buffers
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", opts) -- close buffer
-vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", { desc = "Next buffer", unpack(opts) })
+vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { desc = "Previous buffer", unpack(opts) })
+vim.keymap.set("n", "<leader>bd", ":bdelete!<CR>", { desc = "[B]uffer [D]elete", unpack(opts) })
+vim.keymap.set("n", "<leader>bn", "<cmd> enew <CR>", { desc = "[B]uffer [N]ew", unpack(opts) }) -- new buffer
 
 -- window management
 vim.keymap.set("n", "<leader>v", "<C-w>v", opts) -- split window vertically
@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 
 -- toggle line wrapping
-vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
+vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", { desc = "[L]ine [W]rap", unpack(opts) })
 
 -- stay in indent mode
 vim.keymap.set("v", "<", "<gv", opts)
@@ -69,24 +69,21 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- clear search selection on <Esc>
-vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR><Esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR><Esc>", opts)
 
 -- better pasting
--- vim.keymap.set("x", "p", '"_dP')
--- vim.keymap.set("x", "<leader>p", "P")
-vim.keymap.set({ "n", "x" }, "<leader>p", [["0p]], { desc = "paste from yank register" })
+vim.keymap.set({ "n", "x" }, "<leader>p", [["0p]], { desc = "Paste from yank register" })
 
--- some useful keymaps for compiled languages
-vim.keymap.set("n", "<leader>;", "A;<Esc>", opts)
-vim.keymap.set("n", ";;", "A;<Esc>", opts)
--- compile and run
-vim.keymap.set("n", "<Leader>cr", ":w<CR>:!gcc % -o %:r && ./%:r<CR>", opts)
--- just compile
-vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", opts)
+-- add characters at EOL
+vim.keymap.set("n", "<leader>;", "A;<Esc>", { desc = "; at EOL", unpack(opts) })
+vim.keymap.set("n", "<leader>,", "A,<Esc>", { desc = ", at EOL", unpack(opts) })
 
+-- yanking
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "[Y]ank (to clipboard)", unpack(opts) })
+vim.keymap.set("n", "<leader>ly", '"+yy', { desc = "[Y]ank [L]ine (to clipboard)", unpack(opts) })
 
-vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank selection to system clipboard' })
-vim.keymap.set('n', '<leader>ly', '"+yy', { desc = 'Yank current line to system clipboard' })
+-- compilation
+vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", { desc = "Compile with gcc (vanilla)", unpack(opts) })
 vim.keymap.set("n", "<leader>mp", function()
   local filename = vim.fn.expand("%:t") -- Get current buffer name
   if filename == "" then
