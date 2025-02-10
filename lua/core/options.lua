@@ -46,3 +46,4 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comm
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate Vim plugins from Neovim in case Vim still in use (default: includes this path if Vim is installed)
 vim.o.foldenable = false
 vim.o.foldmethod = "manual"
+vim.opt.fillchars:append({ eob = " " }) -- deactivate the ~ on the non-written lines

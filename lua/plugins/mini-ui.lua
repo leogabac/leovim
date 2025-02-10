@@ -32,7 +32,7 @@ return {
         set_vim_settins = true,
       })
 
-      local colors = require("onedarkpro.helpers").get_colors()
+      -- local colors = require("onedarkpro.helpers").get_colors()
       -- Primary colors
       -- colors.bg           -- Background
       -- colors.bg_dark      -- Darker background
@@ -73,13 +73,13 @@ return {
       -- colors.diff_change  -- Color for changed lines in diff
       -- colors.diff_text    -- Text within a diff change
 
-      vim.api.nvim_set_hl(0, "MiniTablineCurrent", { fg = colors.bg, bg = colors.blue, bold = true })
-      vim.api.nvim_set_hl(0, "MiniTablineVisible", { fg = colors.fg, bg = colors.bg })
-      vim.api.nvim_set_hl(0, "MiniTablineHidden", { fg = colors.gray, bg = colors.bg })
-      vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { fg = colors.bg, bg = colors.red })
-      vim.api.nvim_set_hl(0, "MiniTablineModifiedVisible", { fg = colors.fg, bg = colors.bg })
-      vim.api.nvim_set_hl(0, "MiniTablineModifiedHidden", { fg = colors.gray, bg = colors.bg })
-      vim.api.nvim_set_hl(0, "MiniTablineFill", { fg = colors.bg, bg = colors.bg_dark })
+      -- vim.api.nvim_set_hl(0, "MiniTablineCurrent", { fg = colors.bg, bg = colors.blue, bold = true })
+      -- vim.api.nvim_set_hl(0, "MiniTablineVisible", { fg = colors.fg, bg = colors.bg })
+      -- vim.api.nvim_set_hl(0, "MiniTablineHidden", { fg = colors.gray, bg = colors.bg })
+      -- vim.api.nvim_set_hl(0, "MiniTablineModifiedCurrent", { fg = colors.bg, bg = colors.red })
+      -- vim.api.nvim_set_hl(0, "MiniTablineModifiedVisible", { fg = colors.fg, bg = colors.bg })
+      -- vim.api.nvim_set_hl(0, "MiniTablineModifiedHidden", { fg = colors.gray, bg = colors.bg })
+      -- vim.api.nvim_set_hl(0, "MiniTablineFill", { fg = colors.bg, bg = colors.bg_dark })
     end,
   },
   -- statusline
@@ -126,16 +126,16 @@ return {
       })
 
       -- Custom highlights
-      local colors = require("onedarkpro.helpers").get_colors()
-      vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { fg = colors.bg, bg = colors.green, bold = true })
-      vim.api.nvim_set_hl(0, "MiniStatuslineModeInsert", { fg = colors.bg, bg = colors.blue, bold = true })
-      vim.api.nvim_set_hl(0, "MiniStatuslineModeCommand", { fg = colors.bg, bg = colors.purple, bold = true })
-      vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { fg = colors.blue, bg = colors.bg })
-
-      vim.api.nvim_set_hl(0, "MiniStatuslineMode", { fg = colors.bg, bg = colors.blue, bold = true })
-      vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo", { fg = colors.fg, bg = colors.bg_dark })
-      vim.api.nvim_set_hl(0, "MiniStatuslineGit", { fg = colors.green, bg = colors.bg_dark })
-      vim.api.nvim_set_hl(0, "MiniStatuslineDiagnostics", { fg = colors.red, bg = colors.bg_dark })
+      -- local colors = require("onedarkpro.helpers").get_colors()
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineModeNormal", { fg = colors.bg, bg = colors.green, bold = true })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineModeInsert", { fg = colors.bg, bg = colors.blue, bold = true })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineModeCommand", { fg = colors.bg, bg = colors.purple, bold = true })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { fg = colors.blue, bg = colors.bg })
+      --
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineMode", { fg = colors.bg, bg = colors.blue, bold = true })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo", { fg = colors.fg, bg = colors.bg_dark })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineGit", { fg = colors.green, bg = colors.bg_dark })
+      -- vim.api.nvim_set_hl(0, "MiniStatuslineDiagnostics", { fg = colors.red, bg = colors.bg_dark })
     end,
   },
 }
