@@ -1,6 +1,28 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
-  {"kaarmu/typst.vim"},
+  {
+    "kaarmu/typst.vim",
+    config = function()
+      local typst_watch_job = nil
+
+      vim.keymap.set("n", "<leader>tw", function()
+        local file = vim.fn.expand("%:p") -- Get the full path of the current file
+        if file == "" then
+          print("No file name detected.")
+          return
+        end
+
+        if typst_watch_job then
+          vim.fn.jobstop(typst_watch_job) -- Stop the running job
+          print("Stopped typst watch on " .. file)
+          typst_watch_job = nil
+        else
+          typst_watch_job = vim.fn.jobstart({ "typst", "watch", file }, { detach = true })
+          print("Started typst watch on " .. file)
+        end
+      end, { desc = "Toggle Typst watch on current file" })
+    end,
+  },
   {
     -- Tmux & split window navigation
     "christoomey/vim-tmux-navigator",
