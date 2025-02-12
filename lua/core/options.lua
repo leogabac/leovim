@@ -22,7 +22,7 @@ vim.o.splitright = true -- force all vertical splits to go to the right of curre
 vim.o.hlsearch = false -- set highlight on search (default: true)
 vim.o.showmode = false -- we don't need to see things like -- INSERT -- anymore (default: true)
 vim.opt.termguicolors = true -- set termguicolors to enable highlight groups (default: false)
-vim.o.whichwrap = "bs<>[]hl" -- which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
+-- vim.o.whichwrap = "bs<>[]hl" -- which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 vim.o.numberwidth = 4 -- set number column width to 2 {default 4} (default: 4)
 vim.o.swapfile = true -- creates a swapfile (default: true)
 vim.o.smartindent = true -- make indenting smarter again (default: false)
@@ -46,3 +46,4 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comm
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- separate Vim plugins from Neovim in case Vim still in use (default: includes this path if Vim is installed)
 vim.o.foldenable = false
 vim.o.foldmethod = "manual"
+vim.opt.fillchars:append({ eob = " " }) -- deactivate the ~ on the non-written lines

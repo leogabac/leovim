@@ -15,6 +15,7 @@ return {
     auto_install = false,
     highlight = {
       enable = true,
+      disable = {"latex"},
       -- additional_vim_regex_highlighting = { "ruby" },
       additional_vim_regex_highlighting = false,
     },
