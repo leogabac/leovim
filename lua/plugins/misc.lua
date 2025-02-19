@@ -1,6 +1,18 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
-  -- lazy.nvim
+  {
+    "TobinPalmer/pastify.nvim",
+    cmd = { "Pastify", "PastifyAfter" },
+    config = function()
+      require("pastify").setup({
+        opts = {
+          apikey = "YOUR API KEY (https://api.imgbb.com/)", -- Needed if you want to save online.
+        },
+      })
+      vim.keymap.set("n","<leader>pm",":Pastify<CR>", {desc="[P]aste [M]arkdown"})
+    end,
+  },
+  -- allow images to be rendered in the terminal
   {
     "folke/snacks.nvim",
     ---@type snacks.Config
