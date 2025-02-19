@@ -1,5 +1,17 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
+  -- lazy.nvim
+  {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      image = {
+        -- your image configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      },
+    },
+  },
   {
     "kaarmu/typst.vim",
     config = function()
