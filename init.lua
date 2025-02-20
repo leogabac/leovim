@@ -35,6 +35,7 @@ local plugins = {
   require("plugins.mini-nvim"),
   require("plugins.treesitter"),
 
+  require("plugins.md-preview"),
 
   -- require("plugins.code-runner"),
   require("plugins.misc"),
