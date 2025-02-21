@@ -28,4 +28,8 @@ return {
       vim.keymap.set("n", "<leader>pm", ":Pastify<CR>", { desc = "[P]aste [M]arkdown" })
     end,
   },
+  -- automated bullets for better handling
+  {
+    "bullets-vim/bullets.vim",
+  },
 }
