@@ -1,4 +1,5 @@
 return {
+  -- used for extra pickers that work well with lsp and git
   {
     "echasnovski/mini.extra",
     version = false,
@@ -14,10 +15,6 @@ return {
     config = function()
       local minipairs = require("mini.pairs")
       minipairs.setup({
-        -- mappings = {
-        --   ["<"] = { action = "open", pair = "<>", lhs = "<", rhs = ">" },
-        --   [">"] = { action = "close", pair = "<>", lhs = "<", rhs = ">" },
-        -- },
       })
     end,
   },
@@ -39,7 +36,7 @@ return {
       minisurround.setup()
     end,
   },
-  -- substitute to which key
+  -- substitutes to which key
   {
     "echasnovski/mini.clue",
     version = false,

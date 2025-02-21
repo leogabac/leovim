@@ -1,5 +1,31 @@
 --tandalone plugins with less than 10 lines of config go here
 return {
+  -- allow images to be rendered in the terminal
+  -- {
+  --   "folke/snacks.nvim",
+  --   ---@type snacks.Config
+  --   opts = {
+  --     image = {
+  --       doc = { inline = false },
+  --       math = { enabled = false },
+  --     },
+  --   },
+  -- },
+  {
+    -- basic setup for latex
+    "lervag/vimtex",
+    ft = "tex",
+    lazy = false, -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_compiler_method = "latexmk"
+
+      vim.keymap.set("n", "<leader>ll", ":VimtexCompile<CR>", { desc = "vimtex-compile" })
+      vim.keymap.set("n", "<leader>lc", ":VimtexCompile<CR>", { desc = "vimtex-clean-aux" })
+    end,
+  },
   {
     "kaarmu/typst.vim",
     config = function()
@@ -40,21 +66,6 @@ return {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
-    end,
-  },
-  {
-    -- basic setup for latex
-    "lervag/vimtex",
-    ft = "tex",
-    lazy = false, -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
-    init = function()
-      -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_compiler_method = "latexmk"
-
-      vim.keymap.set("n", "<leader>ll", ":VimtexCompile<CR>", { desc = "vimtex-compile" })
-      vim.keymap.set("n", "<leader>lc", ":VimtexCompile<CR>", { desc = "vimtex-clean-aux" })
     end,
   },
   -- search functionality
