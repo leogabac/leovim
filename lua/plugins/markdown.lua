@@ -28,6 +28,10 @@ return {
       vim.keymap.set("n", "<leader>pm", ":Pastify<CR>", { desc = "[P]aste [M]arkdown" })
     end,
   },
+  -- automate table of content
+  {
+    "mzlogin/vim-markdown-toc",
+  },
   -- automated bullets for better handling
   {
     "bullets-vim/bullets.vim",
