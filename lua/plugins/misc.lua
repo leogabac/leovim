@@ -9,19 +9,20 @@ return {
           apikey = "YOUR API KEY (https://api.imgbb.com/)", -- Needed if you want to save online.
         },
       })
-      vim.keymap.set("n","<leader>pm",":Pastify<CR>", {desc="[P]aste [M]arkdown"})
+      vim.keymap.set("n", "<leader>pm", ":Pastify<CR>", { desc = "[P]aste [M]arkdown" })
     end,
   },
   -- allow images to be rendered in the terminal
-  {
-    "folke/snacks.nvim",
-    ---@type snacks.Config
-    opts = {
-      image = {
-        inline = false,
-      },
-    },
-  },
+  -- {
+  --   "folke/snacks.nvim",
+  --   ---@type snacks.Config
+  --   opts = {
+  --     image = {
+  --       doc = { inline = false },
+  --       math = { enabled = false },
+  --     },
+  --   },
+  -- },
   {
     "kaarmu/typst.vim",
     config = function()
