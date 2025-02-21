@@ -35,15 +35,9 @@ local plugins = {
   require("plugins.mini-nvim"),
   require("plugins.treesitter"),
 
-  require("plugins.md-preview"),
-
-  -- require("plugins.code-runner"),
+  require("plugins.markdown"),
   require("plugins.misc"),
 }
-
-if vim.env.MARKDOWN then
-  table.insert(plugins, require("plugins.markdown-setup"))
-end
 
 require("lazy").setup(plugins)
 
