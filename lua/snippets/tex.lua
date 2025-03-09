@@ -13,6 +13,17 @@ return {
 	s(";a", { t("\\alpha") }),
 	s(";b", { t("\\beta") }),
 	s(";g", { t("\\gamma") }),
+	s(";d", { t("\\delta") }),
+	s(";D", { t("\\Delta") }),
+	s(";p", { t("\\psi") }),
+	s(";P", { t("\\Psi") }),
+	s(";s", { t("\\sigma") }),
+	s(";l", { t("\\lambda") }),
+	s(";m", { t("\\mu") }),
+	s(";n", { t("\\nu") }),
+	s(";e", { t("\\epsilon") }),
+	s(";th", { t("\\theta") }),
+	s(";pi", { t("\\pi") }),
 	s(";inf", { t("\\infty") }),
 	-- placeholder text for cites
 	s("needcite", { t("\\textbf{[CITE]}") }),
@@ -31,14 +42,35 @@ return {
 	-- math text
 	s("tm", fmt(
 			"\\mathrm{<>}",
-			{ i(0) },
+			{ i(1) },
 			{ delimiters = "<>" }
 		)
 	),
-	-- dfrac
+	-- fraction
 	s("ff", fmt(
 			"\\frac{<>}{<>}",
 			{ i(1), i(2) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- sqrt
+	s("sqrt", fmt(
+			"\\sqrt{<>}",
+			{ i(1) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- upperscript
+	s("uu", fmt(
+			"^{<>}",
+			{ i(1) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- subscript
+	s("ss", fmt(
+			"_{<>}",
+			{ i(1) },
 			{ delimiters = "<>" }
 		)
 	),
@@ -67,7 +99,6 @@ return {
 		{ delimiters = "<>" }
 		)
 	),
-
 	-- placeholder text for figures
 	s("needfig", {
 		t({ "\\vspace{1em} INCLUDE FIGURE OF" }),
