@@ -1,0 +1,44 @@
+{"0": {
+    "doc": "CHANGELOG",
+    "title": "CHANGELOG",
+    "content": "All notable user-facing changes to this project are documented in this file. ",
+    "url": "/leovim/CHANGELOG/",
+    
+    "relUrl": "/CHANGELOG/"
+  },"1": {
+    "doc": "Coding",
+    "title": "Coding",
+    "content": " ",
+    "url": "/leovim/docs/coding/",
+    
+    "relUrl": "/docs/coding/"
+  },"2": {
+    "doc": "Home",
+    "title": "leovim",
+    "content": "leovim is another Neovim configuration. Get started now View it on GitHub . There is a lot of missing documentation. Work in progress. Welcome to leovim. At first I made it for myself when I wanted to heavily modify the behavior of my Neovim distribution at the time, after changing too much, I decided to make my own configuration. This is not a neovim distribution, but a template that you can use, modify, and make your own. In fact, I encourage you to keep and use this configuration along your own. To do this, go to the FAQ section. ",
+    "url": "/leovim/#leovim",
+    
+    "relUrl": "/#leovim"
+  },"3": {
+    "doc": "Home",
+    "title": "Features",
+    "content": ". | Simplicity | Preconfigured LaTeX support | . ",
+    "url": "/leovim/#features",
+    
+    "relUrl": "/#features"
+  },"4": {
+    "doc": "Home",
+    "title": "Getting started",
+    "content": "Installation . Clone the repopository . git clone https://github.com/leogabac/leovim.git ~/.config/nvim . and launch . nvim . Documentation . To see what all of the plugins leovim has, and how to work with some of them, you can go to the Documentation. License . Just the Docs is distributed by an MIT license. Thank you to the contributors of leovim! . | | . ",
+    "url": "/leovim/#getting-started",
+    
+    "relUrl": "/#getting-started"
+  },"5": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/leovim/",
+    
+    "relUrl": "/"
+  }
+}

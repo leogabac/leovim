@@ -1,21 +1,62 @@
-# LEOVIM Documentation
+---
+title: Home
+layout: home
+nav_order: 1
+description: "Another neovim configuration"
+permalink: /
+---
 
-> Not even my thesis' codes have this sort of documentation.
+# leovim
+{: .fs-9 }
 
-LEOVIM is yet another Neovim configuration. At first I made it for myself when I wanted to heavily modify the behavior of my Neovim distribution at the time, after changing too much, I decided to make my own configuration.
+leovim is another Neovim configuration. 
+{: .fs-6 .fw-300 }
 
-This is NOT a neovim distribution, but a template that you can use, modify, and make your own. In fact, I encourage you to keep this config simultaneously with your own. To do this, go to the [FAQ](./faq.md) section.
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View it on GitHub](https://github.com/leogabac/leovim){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-This template comes preconfigured with many of the tools I use daily, those include.
+---
 
-* LSP for common languages
-* Tmux
-* LaTeX
-* Markdown (I am working to have an Obsidian replacement)
+{: .warning }
+> There is a lot of missing documentation. Work in progress.
 
-Here is a quick table on where to go when you are lost, and hopefully all your questions will be answered.
+Welcome to leovim. At first I made it for myself when I wanted to heavily modify the behavior of my Neovim distribution at the time, after changing too much, I decided to make my own configuration.
 
-* [Table of Plugins](./table-of-plugins.md) 
-* [Keymaps](./keymaps.md) 
-* [LaTeX Setup](./latex.md) 
-* [Frequently Asked Questions](./faq.md) 
+This is _not_ a neovim distribution, but a template that you can use, modify, and make your own. In fact, I encourage you to keep and use this configuration along your own. To do this, go to the [FAQ](./faq.md) section.
+
+## Features
+
+* Simplicity
+* Preconfigured LaTeX support
+
+## Getting started
+
+
+### Installation
+
+Clone the repopository
+```bash
+git clone https://github.com/leogabac/leovim.git ~/.config/nvim
+```
+and launch
+```bash
+nvim
+```
+
+### Documentation
+
+To see what all of the plugins leovim has, and how to work with some of them, you can go to the [Documentation](https://leogabac.github.io/leovim).
+
+### License
+
+Just the Docs is distributed by an [MIT license](https://github.com/leogabac/texodachi/blob/main/LICENSE).
+
+#### Thank you to the contributors of leovim!
+
+<ul class="list-style-none">
+{% for contributor in site.github.contributors %}
+  <li class="d-inline-block mr-1">
+     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"></a>
+  </li>
+{% endfor %}
+</ul>
