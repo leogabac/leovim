@@ -1592,82 +1592,82 @@ h6,
 
 .btn-primary {
   color: #fff;
-  background-color: rgb(87.0708860759, 56.8227848101, 205.9772151899);
-  background-image: linear-gradient(rgb(111.3227848101, 85.4430379747, 213.0569620253), rgb(87.0708860759, 56.8227848101, 205.9772151899));
+  background-color: rgb(92.12, 63.7, 203.84);
+  background-image: linear-gradient(rgb(102.05, 74.5, 210.35), rgb(92.12, 63.7, 203.84));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 .btn-primary:hover, .btn-primary.zeroclipboard-is-hover {
   color: #fff;
-  background-color: rgb(81.0025316456, 50.0936708861, 202.5063291139);
-  background-image: linear-gradient(rgb(100.9291139241, 73.1772151899, 210.0227848101), rgb(81.0025316456, 50.0936708861, 202.5063291139));
+  background-color: rgb(90.24, 62.4, 199.68);
+  background-image: linear-gradient(rgb(97.22, 68.8, 208.94), rgb(90.24, 62.4, 199.68));
 }
 .btn-primary:active, .btn-primary.selected, .btn-primary.zeroclipboard-is-active {
-  background-color: rgb(79.3670886076, 49.082278481, 198.417721519);
+  background-color: rgb(89.3, 61.75, 197.6);
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .btn-primary.selected:hover {
-  background-color: rgb(71.1898734177, 44.0253164557, 177.9746835443);
+  background-color: rgb(84.6, 58.5, 187.2);
 }
 
 .btn-purple {
   color: #fff;
-  background-color: rgb(87.0708860759, 56.8227848101, 205.9772151899);
-  background-image: linear-gradient(rgb(111.3227848101, 85.4430379747, 213.0569620253), rgb(87.0708860759, 56.8227848101, 205.9772151899));
+  background-color: rgb(92.12, 63.7, 203.84);
+  background-image: linear-gradient(rgb(102.05, 74.5, 210.35), rgb(92.12, 63.7, 203.84));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 .btn-purple:hover, .btn-purple.zeroclipboard-is-hover {
   color: #fff;
-  background-color: rgb(81.0025316456, 50.0936708861, 202.5063291139);
-  background-image: linear-gradient(rgb(100.9291139241, 73.1772151899, 210.0227848101), rgb(81.0025316456, 50.0936708861, 202.5063291139));
+  background-color: rgb(90.24, 62.4, 199.68);
+  background-image: linear-gradient(rgb(97.22, 68.8, 208.94), rgb(90.24, 62.4, 199.68));
 }
 .btn-purple:active, .btn-purple.selected, .btn-purple.zeroclipboard-is-active {
-  background-color: rgb(79.3670886076, 49.082278481, 198.417721519);
+  background-color: rgb(89.3, 61.75, 197.6);
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .btn-purple.selected:hover {
-  background-color: rgb(71.1898734177, 44.0253164557, 177.9746835443);
+  background-color: rgb(84.6, 58.5, 187.2);
 }
 
 .btn-blue {
   color: #fff;
-  background-color: rgb(34.0361111111, 126.1916666667, 249.7638888889);
-  background-image: linear-gradient(rgb(68.9097222222, 146.5208333333, 250.5902777778), rgb(34.0361111111, 126.1916666667, 249.7638888889));
+  background-color: rgb(43.12, 129.36, 245);
+  background-image: linear-gradient(rgb(54.55, 138.15, 250.25), rgb(43.12, 129.36, 245));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 .btn-blue:hover, .btn-blue.zeroclipboard-is-hover {
   color: #fff;
-  background-color: rgb(24.0722222222, 120.3833333333, 249.5277777778);
-  background-image: linear-gradient(rgb(53.9638888889, 137.8083333333, 250.2361111111), rgb(24.0722222222, 120.3833333333, 249.5277777778));
+  background-color: rgb(42.24, 126.72, 240);
+  background-image: linear-gradient(rgb(48.22, 134.46, 250.1), rgb(42.24, 126.72, 240));
 }
 .btn-blue:active, .btn-blue.selected, .btn-blue.zeroclipboard-is-active {
-  background-color: rgb(19.0902777778, 117.4791666667, 249.4097222222);
+  background-color: rgb(41.8, 125.4, 237.5);
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .btn-blue.selected:hover {
-  background-color: rgb(5.625, 104.625, 237.375);
+  background-color: rgb(39.6, 118.8, 225);
 }
 
 .btn-green {
   color: #fff;
-  background-color: rgb(16.1242424242, 171.6757575758, 125.2);
-  background-image: linear-gradient(rgb(19.1893939394, 204.3106060606, 149), rgb(16.1242424242, 171.6757575758, 125.2));
+  background-color: rgb(16.66, 177.38, 129.36);
+  background-image: linear-gradient(rgb(28.9, 184.7, 138.15), rgb(16.66, 177.38, 129.36));
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 .btn-green:hover, .btn-green.zeroclipboard-is-hover {
   color: #fff;
-  background-color: rgb(15.2484848485, 162.3515151515, 118.4);
-  background-image: linear-gradient(rgb(17.8757575758, 190.3242424242, 138.8), rgb(15.2484848485, 162.3515151515, 118.4));
+  background-color: rgb(16.32, 173.76, 126.72);
+  background-image: linear-gradient(rgb(21.76, 182.48, 134.46), rgb(16.32, 173.76, 126.72));
 }
 .btn-green:active, .btn-green.selected, .btn-green.zeroclipboard-is-active {
-  background-color: rgb(14.8106060606, 157.6893939394, 115);
+  background-color: rgb(16.15, 171.95, 125.4);
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .btn-green.selected:hover {
-  background-color: rgb(12.6212121212, 134.3787878788, 98);
+  background-color: rgb(15.3, 162.9, 118.8);
 }
 
 .btn-reset {
