@@ -184,9 +184,6 @@ callouts:
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 #
 
-sass:
-  implementation: sass
-
 plugins:
   - jekyll-seo-tag
   - jekyll-github-metadata
