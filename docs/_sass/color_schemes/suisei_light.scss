@@ -18,7 +18,7 @@ $border-color: #d0d9e8; // Subtle light grayish-blue border color
 // Adding some gold accents
 $gold-accent: #f2c14e; // Gold
 $highlight-color: $gold-accent; // Highlight text or key elements
-$button-hover-color: darken($gold-accent, 10%); // Darker gold for button hover effect
+$button-hover-color: mix(black,$gold-accent, 10%); // Darker gold for button hover effect
 $link-hover-color: $gold-accent; // Gold for link hover effect
 
 @import "./vendor/OneDarkJekyll/syntax"; // Keep the syntax theme

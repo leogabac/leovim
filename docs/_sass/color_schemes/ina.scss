@@ -9,7 +9,7 @@ $base-button-color: #2e2645; // Darker muted purple
 $btn-primary-color: #8d7ce5; // Accent purple
 $code-background-color: #282c34; // Keeping OneDarkJekyll background
 $code-linenumber-color: #c0c7f3; // Soft pastel blue, similar to her highlights
-$feedback-color: darken($sidebar-color, 5%);
+$feedback-color: mix(black,$sidebar-color, 5%);
 $table-background-color: #2a233d; // Muted dark purple
 $search-background-color: #2a233d;
 $search-result-preview-color: #544e77; // Slightly lighter purple

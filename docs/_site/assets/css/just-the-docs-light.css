@@ -875,11 +875,11 @@ blockquote {
   }
 }
 .site-title:hover {
-  background-image: linear-gradient(-90deg, rgb(234.8, 236.82, 244.9) 0%, rgba(234.8, 236.82, 244.9, 0.8) 80%, rgba(234.8, 236.82, 244.9, 0) 100%);
+  background-image: linear-gradient(-90deg, rgb(237.65, 238.62, 242.5) 0%, rgba(237.65, 238.62, 242.5, 0.8) 80%, rgba(237.65, 238.62, 242.5, 0) 100%);
 }
 
 .site-button:hover {
-  background-image: linear-gradient(-90deg, rgb(234.8, 236.82, 244.9) 0%, rgba(234.8, 236.82, 244.9, 0.8) 100%);
+  background-image: linear-gradient(-90deg, rgb(237.65, 238.62, 242.5) 0%, rgba(237.65, 238.62, 242.5, 0.8) 100%);
 }
 
 body {
@@ -1220,7 +1220,7 @@ body {
   text-decoration: none;
 }
 .nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active {
-  background-image: linear-gradient(-90deg, rgb(234.8, 236.82, 244.9) 0%, rgba(234.8, 236.82, 244.9, 0.8) 80%, rgba(234.8, 236.82, 244.9, 0) 100%);
+  background-image: linear-gradient(-90deg, rgb(237.65, 238.62, 242.5) 0%, rgba(237.65, 238.62, 242.5, 0.8) 80%, rgba(237.65, 238.62, 242.5, 0) 100%);
 }
 .nav-list .nav-list-item .nav-list-expander {
   position: absolute;
@@ -1238,7 +1238,7 @@ body {
   }
 }
 .nav-list .nav-list-item .nav-list-expander:hover {
-  background-image: linear-gradient(-90deg, rgb(234.8, 236.82, 244.9) 0%, rgba(234.8, 236.82, 244.9, 0.8) 100%);
+  background-image: linear-gradient(-90deg, rgb(237.65, 238.62, 242.5) 0%, rgba(237.65, 238.62, 242.5, 0.8) 100%);
 }
 .nav-list .nav-list-item .nav-list-expander svg {
   transform: rotate(90deg);
@@ -1821,7 +1821,7 @@ h6,
   padding: 0.25rem 0.75rem;
 }
 .search-result:hover, .search-result.active {
-  background-color: rgb(234.8, 236.82, 244.9);
+  background-color: rgb(237.65, 238.62, 242.5);
 }
 
 .search-result-title {
