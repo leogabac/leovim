@@ -29,7 +29,7 @@
   },"4": {
     "doc": "Home",
     "title": "Getting started",
-    "content": "Installation . Clone the repopository . git clone https://github.com/leogabac/leovim.git ~/.config/nvim . and launch . nvim . Documentation . To see what all of the plugins leovim has, and how to work with some of them, you can go to the Documentation. License . Just the Docs is distributed by an MIT license. Thank you to the contributors of leovim! . | | . ",
+    "content": "Requirements . Mandatory . | neovim &gt; 0.10.0 | . Optional . | . Installation . Clone the repopository . git clone https://github.com/leogabac/leovim.git ~/.config/nvim . and launch . nvim . Documentation . To see what all of the plugins leovim has, and how to work with some of them, you can go to the Documentation. License . Just the Docs is distributed by an MIT license. Thank you to the contributors of leovim! . | | . ",
     "url": "/leovim/#getting-started",
     
     "relUrl": "/#getting-started"

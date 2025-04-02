@@ -1812,19 +1812,19 @@ h6,
   box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.25);
 }
 .btn:hover, .btn.zeroclipboard-is-hover {
-  color: rgb(66.3710743802, 122.647107438, 191.4289256198);
+  color: rgb(72.52, 125.44, 190.12);
 }
 .btn:hover, .btn:active, .btn.zeroclipboard-is-hover, .btn.zeroclipboard-is-active {
   text-decoration: none;
-  background-color: rgb(197.5575, 209.25875, 227.3425);
+  background-color: rgb(198.99, 209.88, 226.71);
 }
 .btn:active, .btn.selected, .btn.zeroclipboard-is-active {
-  background-color: rgb(190.6725, 203.77625, 224.0275);
+  background-color: rgb(194.97, 205.64, 222.13);
   background-image: none;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 .btn.selected:hover {
-  background-color: rgb(207.25, 207.25, 207.25);
+  background-color: #d1d1d1;
 }
 .btn:disabled, .btn:disabled:hover, .btn.disabled, .btn.disabled:hover {
   color: rgba(102, 102, 102, 0.5);
@@ -1840,7 +1840,7 @@ h6,
   box-shadow: inset 0 0 0 2px #e6e1e8;
 }
 .btn-outline:hover, .btn-outline:active, .btn-outline.zeroclipboard-is-hover, .btn-outline.zeroclipboard-is-active {
-  color: rgb(62.4115702479, 117.6611570248, 185.1884297521);
+  color: rgb(70.3, 121.6, 184.3);
   text-decoration: none;
   background-color: transparent;
   box-shadow: inset 0 0 0 3px #e6e1e8;

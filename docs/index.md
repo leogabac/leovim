@@ -31,6 +31,15 @@ This is _not_ a neovim distribution, but a template that you can use, modify, an
 
 ## Getting started
 
+### Requirements
+
+**Mandatory**
+- neovim > 0.10.0
+
+**Optional**
+
+- 
+
 
 ### Installation
 
