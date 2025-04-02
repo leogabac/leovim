@@ -2347,7 +2347,7 @@ thead th {
 :not(pre, figure) > code {
   padding: 0.2em 0.15em;
   font-weight: 400;
-  background-color: #e0e0e0;
+  background-color: #d0d9e8;
   border: 1px solid #d0d9e8;
   border-radius: 4px;
 }
@@ -2361,7 +2361,7 @@ div.listingblock > div.content,
 figure.highlight {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  background-color: #e0e0e0;
+  background-color: #d0d9e8;
   border-radius: 4px;
   box-shadow: none;
   -webkit-overflow-scrolling: touch;
@@ -2376,8 +2376,8 @@ figure.highlight > button {
   position: absolute;
   top: 0;
   right: 0;
-  border: 0.75rem solid #e0e0e0;
-  background-color: #e0e0e0;
+  border: 0.75rem solid #d0d9e8;
+  background-color: #d0d9e8;
   color: #5b6e8b;
   box-sizing: content-box;
 }
@@ -2453,7 +2453,7 @@ figure.highlight :not(pre) > code {
 .highlight .table-wrapper pre {
   min-width: 0;
   padding: 0;
-  background-color: #e0e0e0;
+  background-color: #d0d9e8;
   border: 0;
 }
 .highlight .table-wrapper td,
@@ -2509,12 +2509,12 @@ code.language-mermaid {
 
 .highlight,
 pre.highlight {
-  background: #e0e0e0;
+  background: #d0d9e8;
   color: #000000;
 }
 
 .highlight pre {
-  background: #e0e0e0;
+  background: #d0d9e8;
 }
 
 .text-grey-dk-000 {
