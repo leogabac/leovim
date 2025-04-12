@@ -27,9 +27,11 @@ return {
         vim.keymap.set("n", "gd", ":Pick lsp scope=\"definition\"<CR>", { desc = "[G]oto [D]efinition", noremap = true, silent = true })
         vim.keymap.set("n", "gr", ":Pick lsp scope=\"references\"<CR>", { desc = "[G]oto [R]eferences", noremap = true, silent = true })
         vim.keymap.set("n", "gI", ":Pick lsp scope=\"implementation\"<CR>", { desc = "[G]oto [I]mplementation", noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>sd', vim.diagnostic.open_float, { desc = '[S]how [D]iagnostics' })
         vim.keymap.set("n", "<leader>D", ":Pick lsp scope=\"type_definition\"<CR>", { desc = "Type [D]efinition", noremap = true, silent = true })
         vim.keymap.set("n", "<leader>ds", ":Pick lsp scope=\"document_symbol\"<CR>", { desc = "[D]ocument [S]ymbols", noremap = true, silent = true })
         vim.keymap.set("n", "<leader>ws", ":Pick lsp scope=\"workspace_symbol\"<CR>", { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>ld", ":Pick diagnostic<CR>", { desc = "[F]ind [D]iagnostics", noremap = true, silent = true })
 
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
@@ -62,7 +64,7 @@ return {
 
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
           map("<leader>th", function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+            -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
           end, "[T]oggle Inlay [H]ints")
         end
       end,
