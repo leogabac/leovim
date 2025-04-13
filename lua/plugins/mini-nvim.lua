@@ -34,7 +34,7 @@ return {
     config = function()
       local miniclue = require("mini.clue")
       miniclue.setup({
-        delay = 500,
+        delay = 250,
         triggers = {
           -- Leader triggers
           { mode = "n", keys = "<leader>" },
