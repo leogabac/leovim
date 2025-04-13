@@ -15,21 +15,9 @@ return {
     auto_install = false,
     highlight = {
       enable = true,
-      disable = {"latex"},
-      -- additional_vim_regex_highlighting = { "ruby" },
+      disable = {"latex","cpp","c"},
       additional_vim_regex_highlighting = false,
     },
     indent = { enable = true, disable = { "ruby" } },
-    -- textobjects = {
-    -- 	select = {
-    -- 		enable = true,
-    -- 		lookahead = true, -- Automatically jump forward to text objects
-    -- 		keymaps = {
-    -- 			-- Define keymaps for function text objects
-    -- 			["af"] = "@function.outer", -- Around function (whole function)
-    -- 			["if"] = "@function.inner", -- Inner function (body only)
-    -- 		},
-    -- 	},
-    -- },
   },
 }
