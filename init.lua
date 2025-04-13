@@ -23,7 +23,8 @@ local plugins = {
   require("plugins.indent-blankline"),
 
   -- file exploration
-  require("plugins.nvim-tree"),
+  -- require("plugins.nvim-tree"),
+  require("plugins.yazi-nvim"),
   require("plugins.picker"),
 
   -- general programming utilities
