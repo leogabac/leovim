@@ -3,7 +3,7 @@ return {
   {
     "echasnovski/mini.extra",
     version = false,
-    config = function ()
+    config = function()
       local api = require("mini.extra")
       api.setup()
     end,
@@ -14,8 +14,7 @@ return {
     version = false,
     config = function()
       local minipairs = require("mini.pairs")
-      minipairs.setup({
-      })
+      minipairs.setup({})
     end,
   },
   -- surround actions
@@ -23,8 +22,19 @@ return {
     "echasnovski/mini.surround",
     version = false,
     config = function()
-      local minisurround = require("mini.surround")
-      minisurround.setup()
+      require("mini.surround").setup({
+        custom_surroundings = {
+          -- Override default brackets to remove spaces
+          ["("] = { output = { left = "(", right = ")" } },
+          ["["] = { output = { left = "[", right = "]" } },
+          ["{"] = { output = { left = "{", right = "}" } },
+          ["<"] = { output = { left = "<", right = ">" } },
+          -- Override quotes
+          ['"'] = { output = { left = '"', right = '"' } },
+          ["'"] = { output = { left = "'", right = "'" } },
+          ["`"] = { output = { left = "`", right = "`" } },
+        },
+      })
     end,
   },
   -- substitutes to which key
