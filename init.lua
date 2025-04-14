@@ -2,7 +2,6 @@
 require("core.options") -- ./core/options.lua
 require("core.keymaps") -- ./core/keypams.lua
 require("core.autocmds") -- ./core/autocmds.lua
-require("custom.example")
 
 -- install lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,23 +15,18 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  -- plugins for aesthetics
-  require("plugins.colorscheme"),
-  require("plugins.mini-ui"),
-  require("plugins.noice-classic"),
-  require("plugins.indent-blankline"),
 
-  -- file exploration
-  -- require("plugins.nvim-tree"),
-  require("plugins.yazi-nvim"),
-  require("plugins.picker"),
+  require("plugins.ui.basic-ui"),
+  require("plugins.ui.mini-ui"),
 
-  -- general programming utilities
-  require("plugins.lsp"),
-  require("plugins.autocompletion"),
-  require("plugins.autoformatting"),
-  require("plugins.mini-nvim"),
-  require("plugins.treesitter"),
+  require("plugins.files.nvim-tree"),
+  require("plugins.files.picker"),
+
+  require("plugins.coding.lsp"),
+  require("plugins.coding.autocompletion"),
+  require("plugins.coding.autoformatting"),
+  require("plugins.coding.mini-nvim"),
+  require("plugins.coding.treesitter"),
 
   require("plugins.markdown"),
   require("plugins.misc"),
