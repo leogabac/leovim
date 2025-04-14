@@ -7,7 +7,7 @@ return {
   event = "InsertEnter",
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
-    "hrsh7th/cmp-buffer",
+    -- "hrsh7th/cmp-buffer",
     {
       "L3MON4D3/LuaSnip",
       build = (function()
@@ -167,7 +167,7 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "vimtex" },
-        { name = "buffer" },
+        -- { name = "buffer" },
         { name = "path" },
       },
       formatting = {

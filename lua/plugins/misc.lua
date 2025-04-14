@@ -12,6 +12,10 @@ return {
   --   },
   -- },
   {
+    "nvim-tree/nvim-web-devicons",
+    enabled = vim.g.have_nerd_font,
+  },
+  {
     -- basic setup for latex
     "lervag/vimtex",
     ft = "tex",
@@ -24,29 +28,6 @@ return {
 
       vim.keymap.set("n", "<leader>ll", ":VimtexCompile<CR>", { desc = "vimtex-compile" })
       vim.keymap.set("n", "<leader>lc", ":VimtexCompile<CR>", { desc = "vimtex-clean-aux" })
-    end,
-  },
-  {
-    "kaarmu/typst.vim",
-    config = function()
-      local typst_watch_job = nil
-
-      vim.keymap.set("n", "<leader>tw", function()
-        local file = vim.fn.expand("%:p") -- Get the full path of the current file
-        if file == "" then
-          print("No file name detected.")
-          return
-        end
-
-        if typst_watch_job then
-          vim.fn.jobstop(typst_watch_job) -- Stop the running job
-          print("Stopped typst watch on " .. file)
-          typst_watch_job = nil
-        else
-          typst_watch_job = vim.fn.jobstart({ "typst", "watch", file }, { detach = true })
-          print("Started typst watch on " .. file)
-        end
-      end, { desc = "Toggle Typst watch on current file" })
     end,
   },
   {
@@ -69,18 +50,18 @@ return {
     end,
   },
   -- search functionality
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-  -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-  },
-  },
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   ---@type Flash.Config
+  --   opts = {},
+  -- -- stylua: ignore
+  -- keys = {
+  --   { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+  --   { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+  --   { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+  --   { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+  --   { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  -- },
+  -- },
 }

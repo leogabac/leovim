@@ -1,4 +1,8 @@
 -- Autoformatter setup
+-- lua: stylua
+-- clang: clang-format (via clangd)
+-- markdown: marksman
+--
 return {
   "stevearc/conform.nvim",
   cmd = { "ConformInfo" },
@@ -18,6 +22,8 @@ return {
     format_on_save = false,
     formatters_by_ft = {
       lua = { "stylua" }, -- Use stylua without args
+      c = { "clang-format" },
+      cpp = { "clang-format" },
       markdown = { "prettier" },
     },
   },
