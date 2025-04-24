@@ -4,6 +4,7 @@ return {
     version = false,
     config = function()
       local MiniPick = require("mini.pick")
+      local devicons = require("nvim-web-devicons")
 
       vim.ui.select = MiniPick.ui_select
       MiniPick.setup({
@@ -73,16 +74,31 @@ return {
       -- Keymaps for files
       vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "[S]earch [F]iles", noremap = true, silent = true }) -- focus file explorer
 
-      vim.keymap.set("n", "<leader>sa", function()
-        local handle = io.popen("fd --type f -H -I") -- List all files, including hidden and ignored ones
-        if handle then
-          local result = handle:read("*a")
-          handle:close()
-          local items = vim.split(result, "\n", { trimempty = true })
-          MiniPick.start({ source = { items = items } })
-        end
-      end, { desc = "[S]earch [A]ll files (including ignored)", noremap = true, silent = true })
+      local function all_files()
+        MiniPick.start({
+          source = {
+            items = function()
+              -- Use 'fd' or 'find' command to get all files (including ignored)
+              local command = "fd --hidden --no-ignore --type f --follow --exclude .git || find . -type f"
+              local handle = io.popen(command)
+              local files = {}
+              if handle then
+                for file in handle:lines() do
+                  table.insert(files, file)
+                end
+                handle:close()
+              end
+              return files
+            end,
+            -- This will show icons if nvim-web-devicons is installed
+            name = "All files (including ignored)",
+            cwd = vim.fn.getcwd(),
+          },
+        })
+      end
 
+      -- Keymap to trigger the picker
+      vim.keymap.set("n", "<leader>fa", all_files, { desc = "Find all files (including ignored)" })
     end,
   },
 }
