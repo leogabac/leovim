@@ -95,3 +95,5 @@ vim.keymap.set("n", "<leader>mp", function()
   local cmd = string.format("~/.scripts/md2pdf/md2pdf.sh %s.md %s.pdf", name, name)
   vim.cmd("!" .. cmd)
 end, { desc = "Convert Markdown to PDF" })
+
+vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>', { desc = "Clear search highlights" })
