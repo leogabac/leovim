@@ -33,6 +33,7 @@ return {
           ['"'] = { output = { left = '"', right = '"' } },
           ["'"] = { output = { left = "'", right = "'" } },
           ["`"] = { output = { left = "`", right = "`" } },
+          ["b"] = { output = { left = "**", right = "**" } },
         },
       })
     end,

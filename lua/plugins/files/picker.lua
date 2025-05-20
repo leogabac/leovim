@@ -4,6 +4,7 @@ return {
     version = false,
     config = function()
       local MiniPick = require("mini.pick")
+      local devicons = require("nvim-web-devicons")
 
       vim.ui.select = MiniPick.ui_select
       MiniPick.setup({
@@ -73,16 +74,59 @@ return {
       -- Keymaps for files
       vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "[S]earch [F]iles", noremap = true, silent = true }) -- focus file explorer
 
-      vim.keymap.set("n", "<leader>sa", function()
-        local handle = io.popen("fd --type f -H -I") -- List all files, including hidden and ignored ones
-        if handle then
-          local result = handle:read("*a")
-          handle:close()
-          local items = vim.split(result, "\n", { trimempty = true })
-          MiniPick.start({ source = { items = items } })
-        end
-      end, { desc = "[S]earch [A]ll files (including ignored)", noremap = true, silent = true })
+      local function all_files()
+        MiniPick.start({
+          source = {
+            items = function()
+              -- Use 'fd' or 'find' command to get all files (including ignored)
+              local command = "fd --hidden --no-ignore --type f --follow --exclude .git || find . -type f"
+              local handle = io.popen(command)
+              local files = {}
+              if handle then
+                for file in handle:lines() do
+                  table.insert(files, file)
+                end
+                handle:close()
+              end
+              return files
+            end,
+            -- This will show icons if nvim-web-devicons is installed
+            name = "All files (including ignored)",
+            cwd = vim.fn.getcwd(),
+          },
+        })
+      end
 
+      -- Keymap to trigger the picker
+      vim.keymap.set("n", "<leader>fa", all_files, { desc = "Find all files (including ignored)" })
+
+      vim.keymap.set("n", "<leader>sw", function()
+        require("mini.pick").builtin.grep_live(nil, {
+          source = {
+            name = "Live Grep (cwd)",
+            cwd = vim.fn.getcwd(),
+          },
+        })
+      end, { desc = "Live grep in current working directory" })
     end,
+
+    -- does not work properly
+    vim.keymap.set("n", "<leader>ww", function()
+      -- Prompt user for a filetype or pattern
+      local ext = vim.fn.input("Filetype or glob (e.g. lua, *.c): ")
+
+      -- If the input doesn't start with "*", assume it's just an extension
+      if not ext:match("^%*") then
+        ext = "*." .. ext
+      end
+
+      MiniPick.builtin.grep_live(nil, {
+        source = {
+          name = "Live Grep: " .. ext,
+          cwd = vim.fn.getcwd(),
+          args = { "-g", ext },
+        },
+      })
+    end, { desc = "Live grep by prompted filetype" }),
   },
 }

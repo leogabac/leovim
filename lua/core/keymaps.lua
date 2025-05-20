@@ -81,6 +81,7 @@ vim.keymap.set("n", "<leader>,", "A,<Esc>", { desc = ", at EOL", unpack(opts) })
 -- yanking
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "[Y]ank (to clipboard)", unpack(opts) })
 vim.keymap.set("n", "<leader>ly", '"+yy', { desc = "[Y]ank [L]ine (to clipboard)", unpack(opts) })
+vim.keymap.set('n', '<leader>ya', 'ggVG"+y', { desc = 'Select all and copy to clipboard' })
 
 -- compilation
 vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", { desc = "Compile with gcc (vanilla)", unpack(opts) })
@@ -94,3 +95,5 @@ vim.keymap.set("n", "<leader>mp", function()
   local cmd = string.format("~/.scripts/md2pdf/md2pdf.sh %s.md %s.pdf", name, name)
   vim.cmd("!" .. cmd)
 end, { desc = "Convert Markdown to PDF" })
+
+vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>', { desc = "Clear search highlights" })
