@@ -99,6 +99,34 @@ return {
 
       -- Keymap to trigger the picker
       vim.keymap.set("n", "<leader>fa", all_files, { desc = "Find all files (including ignored)" })
+
+      vim.keymap.set("n", "<leader>sw", function()
+        require("mini.pick").builtin.grep_live(nil, {
+          source = {
+            name = "Live Grep (cwd)",
+            cwd = vim.fn.getcwd(),
+          },
+        })
+      end, { desc = "Live grep in current working directory" })
     end,
+
+    -- does not work properly
+    vim.keymap.set("n", "<leader>ww", function()
+      -- Prompt user for a filetype or pattern
+      local ext = vim.fn.input("Filetype or glob (e.g. lua, *.c): ")
+
+      -- If the input doesn't start with "*", assume it's just an extension
+      if not ext:match("^%*") then
+        ext = "*." .. ext
+      end
+
+      MiniPick.builtin.grep_live(nil, {
+        source = {
+          name = "Live Grep: " .. ext,
+          cwd = vim.fn.getcwd(),
+          args = { "-g", ext },
+        },
+      })
+    end, { desc = "Live grep by prompted filetype" }),
   },
 }
