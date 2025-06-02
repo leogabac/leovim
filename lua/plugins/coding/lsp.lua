@@ -18,25 +18,58 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
       callback = function(event)
-
         local map = function(keys, func, desc, mode)
           mode = mode or "n"
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        vim.keymap.set("n", "gd", ":Pick lsp scope=\"definition\"<CR>", { desc = "[G]oto [D]efinition", noremap = true, silent = true })
-        vim.keymap.set("n", "gr", ":Pick lsp scope=\"references\"<CR>", { desc = "[G]oto [R]eferences", noremap = true, silent = true })
-        vim.keymap.set("n", "gI", ":Pick lsp scope=\"implementation\"<CR>", { desc = "[G]oto [I]mplementation", noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>sd', vim.diagnostic.open_float, { desc = '[S]how [D]iagnostics' })
-        vim.keymap.set("n", "<leader>D", ":Pick lsp scope=\"type_definition\"<CR>", { desc = "Type [D]efinition", noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>ds", ":Pick lsp scope=\"document_symbol\"<CR>", { desc = "[D]ocument [S]ymbols", noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>ws", ":Pick lsp scope=\"workspace_symbol\"<CR>", { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>ld", ":Pick diagnostic<CR>", { desc = "[L]list [D]iagnostics", noremap = true, silent = true })
+        vim.keymap.set(
+          "n",
+          "gd",
+          ':Pick lsp scope="definition"<CR>',
+          { desc = "[G]oto [D]efinition", noremap = true, silent = true }
+        )
+        vim.keymap.set(
+          "n",
+          "gr",
+          ':Pick lsp scope="references"<CR>',
+          { desc = "[G]oto [R]eferences", noremap = true, silent = true }
+        )
+        vim.keymap.set(
+          "n",
+          "gI",
+          ':Pick lsp scope="implementation"<CR>',
+          { desc = "[G]oto [I]mplementation", noremap = true, silent = true }
+        )
+        vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, { desc = "[S]how [D]iagnostics" })
+        vim.keymap.set(
+          "n",
+          "<leader>D",
+          ':Pick lsp scope="type_definition"<CR>',
+          { desc = "Type [D]efinition", noremap = true, silent = true }
+        )
+        vim.keymap.set(
+          "n",
+          "<leader>ds",
+          ':Pick lsp scope="document_symbol"<CR>',
+          { desc = "[D]ocument [S]ymbols", noremap = true, silent = true }
+        )
+        vim.keymap.set(
+          "n",
+          "<leader>ws",
+          ':Pick lsp scope="workspace_symbol"<CR>',
+          { desc = "[W]orkpace [S]ymbols", noremap = true, silent = true }
+        )
+        vim.keymap.set(
+          "n",
+          "<leader>ld",
+          ":Pick diagnostic<CR>",
+          { desc = "[L]list [D]iagnostics", noremap = true, silent = true }
+        )
 
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
         map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
@@ -79,7 +112,6 @@ return {
     --   end
     --   vim.diagnostic.config { signs = { text = diagnostic_signs } }
     -- end
-
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
@@ -146,6 +178,21 @@ return {
             },
           },
         },
+      },
+      -- latex spellchecking lsp
+      ltex = {
+        settings = {
+          ltex = {
+            language = "en-US", -- Default language
+            additionalRules = {
+              enablePickyRules = true,
+              motherTongue = "en-US",
+            },
+            checkFrequency = "save", -- or "edit" for real-time checking
+          },
+        },
+        -- Optional: if you only want LTeX for specific filetypes
+        filetypes = { "markdown", "tex", "text" },
       },
     }
 
