@@ -28,6 +28,8 @@ local plugins = {
   require("plugins.coding.mini-nvim"),
   require("plugins.coding.treesitter"),
 
+  require("plugins.enhancements.latex"),
+
   require("plugins.markdown"),
   require("plugins.misc"),
 }

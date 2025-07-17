@@ -16,6 +16,8 @@ return {
       vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { desc = "Renders MD in browser" })
     end,
   },
+  -- paste images from clipboard
+  -- TODO: make it paste the relative directory of the image instead, as this is useful for latex-based workflows
   {
     "TobinPalmer/pastify.nvim",
     cmd = { "Pastify", "PastifyAfter" },
@@ -25,7 +27,7 @@ return {
           apikey = "YOUR API KEY (https://api.imgbb.com/)", -- Needed if you want to save online.
         },
       })
-      vim.keymap.set("n", "<leader>pm", ":Pastify<CR>", { desc = "[P]aste [M]arkdown" })
+      vim.keymap.set("n", "<leader>pi", ":Pastify<CR>", { desc = "[P]aste [I]mage" })
     end,
   },
   -- automate table of content
