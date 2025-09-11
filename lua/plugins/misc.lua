@@ -14,14 +14,12 @@ return {
           -- this is the default, but left it explicitely
           -- in case you want to disable math rendering
           -- as it might be annoying sometimes
-          enabled = true,
+          enabled = false,
         },
         -- this is mostly default
         latex = {
           font_size = "large",
-          -- for latex documents, the doc packages are included automatically,
-          -- but you can add more packages here. Useful for markdown documents.
-          packages = { "amsmath", "amssymb", "amsfonts", "amscd", "mathtools" },
+          packages = { "amsmath", "amssymb", "amsfonts", "amscd", "mathtools", "physics" },
           tpl = [[
         \documentclass[preview,border=0pt,varwidth,12pt]{standalone}
         \usepackage{${packages}}
@@ -32,8 +30,8 @@ return {
         ${content}}
         \end{document}]],
         },
-      }
-    }
+      },
+    },
   },
   {
     "nvim-tree/nvim-web-devicons",
@@ -64,14 +62,24 @@ return {
   },
   {
     -- Powerful Git integration for Vim
+    "lewis6991/gitsigns.nvim",
+  },
+  {
+    -- more Git integration for Vim
     "tpope/vim-fugitive",
   },
+
   {
     -- High-performance color highlighter
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
     end,
+  },
+  -- automated bullets for better handling
+  {
+    "bullets-vim/bullets.vim",
+    ft = "markdown",
   },
   -- search functionality
   {

@@ -22,6 +22,7 @@ return {
     format_on_save = false,
     formatters_by_ft = {
       lua = { "stylua" }, -- Use stylua without args
+      python = {"ruff_format"},
       c = { "clang-format" },
       cpp = { "clang-format" },
       markdown = { "prettier" },

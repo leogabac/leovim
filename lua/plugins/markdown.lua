@@ -35,9 +35,4 @@ return {
     "mzlogin/vim-markdown-toc",
     ft = "markdown",
   },
-  -- automated bullets for better handling
-  {
-    "bullets-vim/bullets.vim",
-    ft = "markdown",
-  },
 }
