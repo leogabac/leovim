@@ -4,15 +4,14 @@ return {
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },
     "mason-org/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-
+    -- "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
 
+    -- vim.lsp.buf.semantic_tokens_full()
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
       callback = function(event)
-
         local map = function(keys, func, desc, mode)
           mode = mode or "n"
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -67,7 +66,6 @@ return {
         )
 
         map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-
 
         -- @param client vim.lsp.Client
         -- @param method vim.lsp.protocol.Method
@@ -172,7 +170,7 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua", -- Used to format Lua code
     })
-    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+    -- require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     require("mason-lspconfig").setup({
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)

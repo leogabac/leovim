@@ -14,6 +14,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- in your init.lua or colorscheme config
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+
 local plugins = {
 
   require("plugins.ui.basic-ui"),
@@ -39,51 +46,8 @@ require("lazy").setup(plugins)
 -- that it is ignoring all of my configs
 -- ensuring not them being enabled, and forcefully doing it here works
 -- bruh
+-- i will eventually figure out how to make this cleanly
 
-require("lspconfig").pylsp.setup({
-  settings = {
-    pylsp = {
-      plugins = {
-        -- disable everything
-        autopep8 = { enabled = false },
-        yapf = { enabled = false },
-        pylint = { enabled = false },
-        pyflakes = { enabled = false },
-        flake8 = { enabled = false },
-        mccabe = { enabled = false },
-        pydocstyle = { enabled = false },
-        rope_autoimport = { enabled = false },
-        rope_completion = { enabled = false },
-        pylsp_mypy = { enabled = false },
-        pylsp_black = { enabled = false },
-        pylsp_isort = { enabled = false },
+require("plugins.coding.lsp-setup")
 
-        -- enable only pycodestyle
-        pycodestyle = {
-          enabled = true,
-          maxLineLength = 120,
-          ignore = {
-            "E402", -- import not at top of file
-            "W503", -- line break before binary operator
-          },
-        },
-      },
-    },
-  },
-})
 
--- Setup ruff-lsp for linting only (no autoformat on save)
-require("lspconfig").ruff.setup({
-  settings = {
-    -- optional: override ruff config here if needed
-    -- for example, select rules or line-length
-  },
-  on_attach = function(client, bufnr)
-    -- optional: you can still bind a manual formatting key
-    if client.server_capabilities.documentFormattingProvider then
-      vim.keymap.set("n", "<leader>rf", function()
-        vim.lsp.buf.format({ bufnr = bufnr })
-      end, { buffer = bufnr, desc = "Ruff: Format buffer" })
-    end
-  end,
-})

@@ -53,6 +53,10 @@ return {
     end,
   },
   {
+    "vigoux/ltex-ls.nvim",
+    requires = "neovim/nvim-lspconfig",
+  },
+  {
     -- Tmux & split window navigation
     "christoomey/vim-tmux-navigator",
   },
