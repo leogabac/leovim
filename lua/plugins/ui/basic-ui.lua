@@ -25,24 +25,7 @@ return {
         },
         overrides = function(colors) -- add/modify highlights
           return {
-            Normal = { bg = "NONE" },
-            NormalFloat = { bg = "NONE" },
-            SignColumn = { bg = "NONE" },
-            LineNr = { bg = "NONE" },
-            EndOfBuffer = { bg = "NONE" },
-
-            -- Git signs / fugitive
-            GitGutterAdd = { bg = "NONE" },
-            GitGutterChange = { bg = "NONE" },
-            GitGutterDelete = { bg = "NONE" },
-            GitSignsAdd = { bg = "NONE" },
-            GitSignsChange = { bg = "NONE" },
-            GitSignsDelete = { bg = "NONE" },
-
-            DiffAdd = { bg = "NONE" },
-            DiffChange = { bg = "NONE" },
-            DiffDelete = { bg = "NONE" },
-          }
+         }
         end,
         theme = "wave", -- Load "wave" theme
         background = { -- map the value of 'background' option to a theme
