@@ -31,42 +31,6 @@ return {
             LineNr = { bg = "NONE" },
             EndOfBuffer = { bg = "NONE" },
 
-            -- -- Common groups with background
-            -- VertSplit = { bg = "NONE" },
-            -- ColorColumn = { bg = "NONE" },
-            -- CursorLine = { bg = "NONE" },
-            -- CursorColumn = { bg = "NONE" },
-            -- Visual = { bg = "NONE" },
-            -- StatusLine = { bg = "NONE" },
-            -- StatusLineNC = { bg = "NONE" },
-            -- TabLine = { bg = "NONE" },
-            -- TabLineFill = { bg = "NONE" },
-            -- TabLineSel = { bg = "NONE" },
-            -- FloatBorder = { bg = "NONE" },
-            -- Pmenu = { bg = "NONE" },
-            -- PmenuSel = { bg = "NONE" },
-            -- PmenuSbar = { bg = "NONE" },
-            -- PmenuThumb = { bg = "NONE" },
-
-            -- -- mini stuff
-            -- MiniInput = { bg = "NONE" },
-            -- MiniInputPrompt = { bg = "NONE" },
-            -- MiniPickerBorder = { bg = "NONE" },
-            -- MiniPickerTitle = { bg = "NONE" },
-            -- MiniPickerPrompt = { bg = "NONE" },
-            -- MiniStatuslineMode = { bg = "NONE" },
-            -- MiniStatuslineFile = { bg = "NONE" },
-            -- MiniStatuslineFileInfo = { bg = "NONE" },
-            -- MiniStatuslineDevinfo = { bg = "NONE" },
-            -- MiniStatuslineVSplit = { bg = "NONE" },
-            -- MiniTablineCurrent = { bg = "NONE" },
-            -- MiniTablineVisible = { bg = "NONE" },
-            -- MiniTablineHidden = { bg = "NONE" },
-            -- MiniTablineModifiedCurrent = { bg = "NONE" },
-            -- MiniTablineModifiedVisible = { bg = "NONE" },
-            -- MiniTablineModifiedHidden = { bg = "NONE" },
-            -- MiniTablineFill = { bg = "NONE" },
-
             -- Git signs / fugitive
             GitGutterAdd = { bg = "NONE" },
             GitGutterChange = { bg = "NONE" },
@@ -90,17 +54,6 @@ return {
       -- setup must be called before loading
       vim.cmd("colorscheme kanagawa") -- Make sure after colorscheme any leftover background highlights get disabled
 
-      -- -- If you use ColorScheme autocmds
-      -- vim.api.nvim_create_autocmd("ColorScheme", {
-      --   pattern = "*",
-      --   callback = function()
-      --     vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-      --     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-      --     vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
-      --     vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
-      --     vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
-      --   end,
-      -- })
     end,
   },
   -- noice
