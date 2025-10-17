@@ -1,13 +1,42 @@
 -- defines the colorscheme
 -- noice.nvim for commandline and messages
--- indent-blankline for indentation scope 
+-- indent-blankline for indentation scope
 return {
-  -- colorscheme
   {
     "rebelot/kanagawa.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd("colorscheme kanagawa-wave")
+      -- Default options:
+      require("kanagawa").setup({
+        compile = false, -- enable compiling the colorscheme
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = {},
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = {},
+        transparent = false, -- do not set background color
+        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+        terminalColors = true, -- define vim.g.terminal_color_{0,17}
+        colors = { -- add/modify theme and palette colors
+          palette = {},
+          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        },
+        overrides = function(colors) -- add/modify highlights
+          return {
+         }
+        end,
+        theme = "wave", -- Load "wave" theme
+        background = { -- map the value of 'background' option to a theme
+          dark = "wave", -- try "dragon" !
+          light = "lotus",
+        },
+      })
+
+      -- setup must be called before loading
+      vim.cmd("colorscheme kanagawa") -- Make sure after colorscheme any leftover background highlights get disabled
+
     end,
   },
   -- noice
@@ -53,43 +82,59 @@ return {
     },
   },
   -- indent-blankline
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   main = "ibl",
+  --   opts = {
+  --     indent = {
+  --       char = "▏", -- Light vertical line (use "│" for a bolder look)
+  --       highlight = "IblIndent", -- Base indent color (subtle)
+  --     },
+  --     scope = {
+  --       enabled = true,
+  --       char = "▎", -- Slightly thicker than indent char
+  --       show_start = false, -- No start-of-scope marker
+  --       show_end = false, -- No end-of-scope marker
+  --       show_exact_scope = true, -- Highlight only the current scope
+  --       highlight = "IblScopeCurrent", -- Bright highlight for current scope
+  --       -- Optional: Prioritize certain scopes (e.g., functions, loops)
+  --       priority = 100, -- Higher than indent priority (default: 50)
+  --     },
+  --     exclude = {
+  --       filetypes = {
+  --         "help",
+  --         "dashboard",
+  --         "neo-tree", -- Disable for UIs
+  --         "lazy",
+  --         "mason",
+  --         "TelescopePrompt", -- Plugin UIs
+  --       },
+  --       buftypes = { "terminal", "nofile" }, -- Skip non-file buffers
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     -- Set highlight groups (define these in your colorscheme or init.lua)
+  --     vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3b4252", nocombine = true }) -- Dim base indent
+  --     vim.api.nvim_set_hl(0, "IblScopeCurrent", { fg = "#5e81ac", bold = true }) -- Bright current scope
+  --     vim.api.nvim_set_hl(0, "IblScope", { fg = "#4c566a", nocombine = true }) -- Optional: Non-current scope
+  --
+  --     require("ibl").setup(opts)
+  --   end,
+  -- },
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {
-      indent = {
-        char = "▏", -- Light vertical line (use "│" for a bolder look)
-        highlight = "IblIndent", -- Base indent color (subtle)
-      },
-      scope = {
-        enabled = true,
-        char = "▎", -- Slightly thicker than indent char
-        show_start = false, -- No start-of-scope marker
-        show_end = false, -- No end-of-scope marker
-        show_exact_scope = true, -- Highlight only the current scope
-        highlight = "IblScopeCurrent", -- Bright highlight for current scope
-        -- Optional: Prioritize certain scopes (e.g., functions, loops)
-        priority = 100, -- Higher than indent priority (default: 50)
-      },
-      exclude = {
-        filetypes = {
-          "help",
-          "dashboard",
-          "neo-tree", -- Disable for UIs
-          "lazy",
-          "mason",
-          "TelescopePrompt", -- Plugin UIs
+    "echasnovski/mini.indentscope",
+    version = false, -- use latest
+    event = "VeryLazy",
+    config = function()
+      local indentscope = require("mini.indentscope")
+      indentscope.setup({
+        draw = {
+          delay = 0,
+          animation = indentscope.gen_animation.none(),
         },
-        buftypes = { "terminal", "nofile" }, -- Skip non-file buffers
-      },
-    },
-    config = function(_, opts)
-      -- Set highlight groups (define these in your colorscheme or init.lua)
-      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3b4252", nocombine = true }) -- Dim base indent
-      vim.api.nvim_set_hl(0, "IblScopeCurrent", { fg = "#5e81ac", bold = true }) -- Bright current scope
-      vim.api.nvim_set_hl(0, "IblScope", { fg = "#4c566a", nocombine = true }) -- Optional: Non-current scope
-
-      require("ibl").setup(opts)
+        symbol = "│", -- character used for guides
+        options = { try_as_border = true },
+      })
     end,
   },
 }

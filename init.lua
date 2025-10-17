@@ -14,6 +14,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- in your init.lua or colorscheme config
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+
 local plugins = {
 
   require("plugins.ui.basic-ui"),
@@ -28,8 +35,19 @@ local plugins = {
   require("plugins.coding.mini-nvim"),
   require("plugins.coding.treesitter"),
 
-  require("plugins.markdown"),
+  require("plugins.enhancements.latex"),
+
   require("plugins.misc"),
 }
 
 require("lazy").setup(plugins)
+
+-- something broke in mason-lspconfig
+-- that it is ignoring all of my configs
+-- ensuring not them being enabled, and forcefully doing it here works
+-- bruh
+-- i will eventually figure out how to make this cleanly
+
+require("plugins.coding.lsp-setup")
+
+

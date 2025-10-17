@@ -61,23 +61,30 @@ return {
 		)
 	),
 	-- upperscript
-	s("uu", fmt(
+	s(";uu", fmt(
 			"^{<>}",
 			{ i(1) },
 			{ delimiters = "<>" }
 		)
 	),
 	-- subscript
-	s("ss", fmt(
+	s(";ss", fmt(
 			"_{<>}",
+			{ i(1) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- vector (physics package)
+	s(";vb", fmt(
+			"\\vb{<>}",
 			{ i(1) },
 			{ delimiters = "<>" }
 		)
 	),
 	-- integral
 	s("int", fmt(
-			"\\int_{<>}^{<>} <> \\textrm{d}<>",
-			{ i(1), i(2), i(0), i(3) },
+			"\\int \\textrm{d}<> <>",
+			{ i(1), i(0) },
 			{ delimiters = "<>" }
 		)
 	),
