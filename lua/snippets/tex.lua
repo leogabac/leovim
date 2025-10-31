@@ -39,8 +39,22 @@ return {
 			{ delimiters = "<>" }
 		)
 	),
+	-- label an equation
+	s("labeq", fmt(
+			"Eq. (\\label{eq:<>})",
+			{ i(0) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- reference an equation
+	s("refeq", fmt(
+			"Eq. (\\ref{eq:<>})",
+			{ i(0) },
+			{ delimiters = "<>" }
+		)
+	),
 	-- math text
-	s("tm", fmt(
+	s(";tm", fmt(
 			"\\mathrm{<>}",
 			{ i(1) },
 			{ delimiters = "<>" }
@@ -81,6 +95,21 @@ return {
 			{ delimiters = "<>" }
 		)
 	),
+	-- mathcal 
+	s(";mc", fmt(
+			"\\mathcal{<>}",
+			{ i(1) },
+			{ delimiters = "<>" }
+		)
+	),
+	-- mathbb 
+	s(";mb", fmt(
+			"\\mathbb{<>}",
+			{ i(1) },
+			{ delimiters = "<>" }
+		)
+	),
+
 	-- integral
 	s("int", fmt(
 			"\\int \\textrm{d}<> <>",
@@ -103,6 +132,17 @@ return {
 			\end{<>}
 		]],
 		{ i(1), i(0), rep(1) },
+		{ delimiters = "<>" }
+		)
+	),
+	-- align environment
+	s("align", fmt(
+		[[
+			\begin{align}
+				<>
+			\end{align}
+		]],
+		{ i(0) },
 		{ delimiters = "<>" }
 		)
 	),
