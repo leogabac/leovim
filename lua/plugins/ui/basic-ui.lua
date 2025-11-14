@@ -54,6 +54,11 @@ return {
       -- setup must be called before loading
       vim.cmd("colorscheme kanagawa") -- Make sure after colorscheme any leftover background highlights get disabled
 
+      vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "TreesitterContextLineNumberSeparator", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { fg = "#7AA2F7", bg = "NONE" })
+
     end,
   },
   -- noice

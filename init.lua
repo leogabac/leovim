@@ -30,6 +30,7 @@ local plugins = {
   require("plugins.files.picker"),
 
   require("plugins.coding.lsp"),
+  require("plugins.coding.debugger"),
   require("plugins.coding.autocompletion"),
   require("plugins.coding.autoformatting"),
   require("plugins.coding.mini-nvim"),
@@ -49,5 +50,3 @@ require("lazy").setup(plugins)
 -- i will eventually figure out how to make this cleanly
 
 require("plugins.coding.lsp-setup")
-
-
