@@ -65,15 +65,6 @@ return {
     "tpope/vim-sleuth",
   },
   {
-    -- Powerful Git integration for Vim
-    "lewis6991/gitsigns.nvim",
-  },
-  {
-    -- more Git integration for Vim
-    "tpope/vim-fugitive",
-  },
-
-  {
     -- High-performance color highlighter
     "norcalli/nvim-colorizer.lua",
     config = function()

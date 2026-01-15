@@ -25,6 +25,7 @@ lspconfig.pylsp.setup({
           maxLineLength = 120,
           ignore = {
             "E402", -- import not at top of file
+            "E731", -- do not assign lambda expression
             "W503", -- line break before binary operator
           },
         },
@@ -57,4 +58,3 @@ lspconfig.ltex.setup({})
 --   window_border = 'single', -- How the border should be rendered
 --   -- Put your lsp config here, just like with nvim-lspconfig
 -- }
-

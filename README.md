@@ -10,6 +10,11 @@ If you came across this, chances are you know me in person and wanted to try my 
 
 ## Quick Start
 
+### Requirements
+* neovim > 0.10.0
+* libgit2 (for fugit2.nvim)
+
+
 
 ### Installation
 

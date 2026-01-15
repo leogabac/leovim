@@ -37,6 +37,7 @@ local plugins = {
   require("plugins.coding.treesitter"),
 
   require("plugins.enhancements.latex"),
+  require("plugins.enhancements.git"),
 
   require("plugins.misc"),
 }
