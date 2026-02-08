@@ -22,7 +22,6 @@ vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
-floaterm_toggle = require("plugins.floaterm").toggle
 
 local plugins = {
 
