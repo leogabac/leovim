@@ -3,6 +3,7 @@ require("core.options") -- ./core/options.lua
 require("core.keymaps") -- ./core/keypams.lua
 require("core.autocmds") -- ./core/autocmds.lua
 
+
 -- install lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,6 +21,8 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+
+floaterm_toggle = require("plugins.floaterm").toggle
 
 local plugins = {
 
@@ -51,3 +54,5 @@ require("lazy").setup(plugins)
 -- i will eventually figure out how to make this cleanly
 
 require("plugins.coding.lsp-setup")
+
+

@@ -81,7 +81,7 @@ vim.keymap.set("n", "<leader>,", "A,<Esc>", { desc = ", at EOL", unpack(opts) })
 -- yanking
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "[Y]ank (to clipboard)", unpack(opts) })
 vim.keymap.set("n", "<leader>ly", '"+yy', { desc = "[Y]ank [L]ine (to clipboard)", unpack(opts) })
-vim.keymap.set('n', '<leader>ya', 'ggVG"+y', { desc = 'Select all and copy to clipboard' })
+vim.keymap.set("n", "<leader>ya", 'ggVG"+y', { desc = "Select all and copy to clipboard" })
 
 -- compilation
 vim.keymap.set("n", "<Leader>cc", ":w<CR>:!gcc % -o %:r.out<CR>", { desc = "Compile with gcc (vanilla)", unpack(opts) })
@@ -96,4 +96,8 @@ vim.keymap.set("n", "<leader>mp", function()
   vim.cmd("!" .. cmd)
 end, { desc = "Convert Markdown to PDF" })
 
-vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR>', { desc = "Clear search highlights" })
+vim.keymap.set("n", "<Esc>", "<Cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
+
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm size=80 direction=float<CR>", { desc = "ToggleTerm" })
+vim.keymap.set("t", "<leader>tt", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "Exit ToggleTerm" })
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n><cmd>ToggleTerm<CR>]])
